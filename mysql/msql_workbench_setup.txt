@@ -1,0 +1,13 @@
+INSERT INTO users (first_name, last_name, age, created_at, updated_at)
+VALUES ("Ben", "Dover", 25, now(), now());
+
+SELECT * users WHERE id=1
+
+UPDATE users SET age = 30 WHERE id = 1;
+
+DELETE FROM users WHERE id = 1;
+
+
+
+
+

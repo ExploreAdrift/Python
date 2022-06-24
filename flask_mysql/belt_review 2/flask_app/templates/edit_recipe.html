@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="navbar d-flex ms-4">
+        <h1 style="margin-right: 25%;">Edit Recipe</h1>
+        <!-- these buttons will take us to the app route for whatever in the href -->
+        <p><a href="/dashboard">dashboard</a></p>
+        <p><a href="/logout">logout</a></p>
+    </div>
+    <!-- this is for any messages if the informtion fails validation -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for messages in messages %}
+                    <p>{{ message }} </p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <!-- CONTAINER DIV TO HOLD 2 COLUMNS OF RECIPE -->
+        <div class="main d-flex">
+        
+        <!-- left column -->
+        <form action="/send_edit/{{recipe['id']}}" method="post" class="form group">
+            <div class="leftcol">
+                <!-- we are using hidden input to send the user id through for recipe creation -->
+                <input type="hidden" name="user_id" value="{{ user_id }}">
+                <label for="name" class="label-group">Name</label>
+                <input type="text" name="description" id="name" class="form-control">
+                <label for="description" class="label-group">description</label>
+                <textarea type="text" name="description" id="description"
+                    class="form-control">{{ recipe ["description"]}}</textarea>
+                <label for="instructions" class="label-group">Name</label>
+                <textarea type="text" name="instructions" id="instructions"
+                    class="form-control">{{ recipe ["instructions"]}}</textarea>
+                <button type="submit" class="btn btn-success">Update</button>
+            </div>
+            <div class="rightcol">
+                <label for="date_made" class="label-group">Date made on</label>
+                <input type="date" name="date_made" id="date_made">
+                <label for="under_30" class="label-group">Under 30 minutes?</label><br>
+                <!-- when using the radio button, we set the key (name) to the same, and different values for the bottom -->
+                {% if recipe["under_30"] == "yes" %}
+                <input type="radio" name="under_30" id="yes" value="yes">Yes
+                <input type="radio" name="under_30" id="no" value="no"> No <br>
+                {% endif %}
+                {% if recipe["under_30"] == "yes" %}
+                <input type="radio" name="under_30" id="yes" value="yes">Yes
+                <input type="radio" name="under_30" id="no" value="no"> No <br>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

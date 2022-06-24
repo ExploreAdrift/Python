@@ -1,0 +1,23 @@
+INSERT INTO users (first_name, last_name, email, created_at, updated_at) VALUES ("Patrick", "Star", "pstar@email.com", now(), now());
+INSERT INTO users (first_name, last_name, email, created_at, updated_at) VALUES ("Squidward", "Tentacle", "stent@email.com", now(), now());
+INSERT INTO users (first_name, last_name, email, created_at, updated_at) VALUES ("Bob", "Barker", "pir@email.com", now(), now());
+
+SELECT * FROM users;
+
+SELECT * FROM users WHERE email= "pstar@email.com";
+
+SELECT * FROM users WHERE id=(SELECT MAX(id) FROM users);
+
+UPDATE users SET last_name = "Pancakes" WHERE id = 3;
+
+DELETE FROM users WHERE id = 2;
+
+SELECT * FROM users ORDER BY first_name;
+
+SELECT * FROM users ORDER BY first_name DESC;
+
+
+
+
+
+

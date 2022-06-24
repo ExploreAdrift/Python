@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- based on the folder structure on the right -->
+    <!-- linking a css style sheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <!-- linking a javascript file -->
+    <script type="text/javascript" src="{{ url_for('static', filename='my_script.js') }}"></script>
+    <!-- linking an image -->
+
+    <title>Checkerboard</title>
+
+</head>
+<style>
+    .row {
+        display: flex;
+    }
+</style>
+
+<body>
+    <div class="topCheck">
+        <h1>**** Checkerboard ****</h1>
+    </div>
+
+    {% for x in range(0, row): %}
+    {% if x % 2 == 0: %}
+    <div class="row e dflex">
+        {% for i in range(0, num): %}
+        {% if i % 2 == 0: %}
+
+        <div class="box1" style="background-color:blue;"></div>
+        {% else: %} s
+
+        <div class="box2" style="background-color: yellow;"></div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+    {% if x % 2 != 0: %}
+    <div class="row o d-flex">
+        {% for i in range(0, num): %}
+        {% if x % 2 == 0: %}
+
+        <div class="box2" style="background-color:yellow;"></div>
+        {% else: %}
+        <div class="box1" style="background-color: blue;"></div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endfor %}
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ answer }}</h1>
+    {% if session['attempt'] == 1: %}
+        <h3>You have made 1 guess!</h3>
+    {% else: %}
+        <h3>You have made {{session['attempt']}} guesses!</h3>
+    {% endif%}
+    
+    <form action="/numcheck" method="post">
+        <p>what is your next guess?</p>
+        <input type="text" name="guess" id="guess">
+        <button type="submit">CONFIRM GUESS!</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner!</title>
+</head>
+<body>
+    <h1>Winner!!</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Attempts</th>
+        </tr>
+        {% for x in l1: %}
+            <tr>
+                <td>{{ x }}</td>
+                <td>{{ l1[x] }}</td>
+            </tr>
+        {% endfor %}
+        {% for x in l2: %}
+            <tr>
+                <td>{{ x }}</td>
+                <td>{{ l2[x] }}</td>
+            </tr>
+        {% endfor %}
+        {% for x in l3: %}
+            <tr>
+                <td>{{ x }}</td>
+                <td>{{ l3[x] }}</td>
+            </tr>
+        {% endfor %}
+        {% for x in l4: %}
+            <tr>
+                <td>{{ x }}</td>
+                <td>{{ l4[x] }}</td>
+            </tr>
+        {% endfor %}
+        {% for x in l5: %}
+            <tr>
+                <td>{{ x }}</td>
+                <td>{{ l5[x] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <a href="/restart">Play Again?</a>
+    
+</body>
+</html>

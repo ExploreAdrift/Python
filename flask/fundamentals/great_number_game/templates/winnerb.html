@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner!</title>
+</head>
+<body>
+    <h1>Winner!!</h1>
+    {% if session['attempt'] == 1: %}
+        <h3>You guessed it in 1 try!!</h3>
+    {% else: %}
+        <h3>You guessed it in {{ session['attempt'] }} tries!</h3>
+    {% endif %}
+    <form action="/addwin" method="post">
+        <h2>Congrats!! You made the LeaderBoard!!</h2>
+        <input type="text" name="win" id="win" placeholder="Enter your name here">
+        <button type="submit">click to confirm!</button>
+    </form>
+</body>
+</html>

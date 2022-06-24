@@ -1,0 +1,47 @@
+SELECT name, language, percentage 
+FROM countries
+JOIN languages ON countries.id = languages.country_id
+WHERE langauge = 'Slovene' 
+ORDER BY percentage DESC;
+
+SELECT countries.name, COUNT(cities.country_id) AS city_count
+FROM countries
+JOIN cities ON countries.id = cities.country_id
+GROUP BY countries.name
+ORDER BY city_count DESC;
+
+SELECT citites.population, cities.name
+FROM cities 
+JOIN countries ON citites.country_id = countries.id
+WHERE cities.population > 500000 AND countries.name = "Mexico"
+ORDER BY citites.population DESC;
+
+SELECET language, percentage, name 
+FROM languages
+JOIN countries ON languages.country_id = country.id
+WHERE percentage > 89
+ORDER BY percentage DESC;
+
+SELECT name, surface_area, population
+FROM countries
+WHERE surface_area < 501 AND population >100000;
+
+SELECT countries.name
+FROM countries
+WHERE government_form = "Constitutional Monarchy" AND life_expectancy > 75 AND capital > 200;
+
+SELECT countries.name, cities.name, cities.district, cities.population
+FROM countries
+JOIN cities ON countries.id = cities.country_id
+WHERE countries.name= "Argentina" AND cities.district = "Buenos Aires" AND cities.population > 500000;
+
+SELECT region,  COUNT(countries.id) AS Number_of_Countries
+FROM countries
+GROUP BY region
+ORDER BY Number_of_Countries DESC;
+
+
+("https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=KM6GVGPUq1KIgRdQQ0reDxraYdKvOqnDy3Rwcy0G")
+
+
+

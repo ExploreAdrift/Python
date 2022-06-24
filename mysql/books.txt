@@ -1,0 +1,54 @@
+INSERT INTO authors (name) VALUES ("Jane Austen");
+INSERT INTO authors (name) VALUES ("Emily Dickinson");
+INSERT INTO authors (name) VALUES ("Fyodor Dostoevsky");
+INSERT INTO authors (name) VALUES ("Willian Shakespeare");
+INSERT INTO authors (name) VALUES ("Lau Tzu");
+
+INSERT INTO books (title, num_of_pages) VALUES ("C Sharp", 476);
+INSERT INTO books (title, num_of_pages) VALUES ("Java", 669);
+INSERT INTO books (title, num_of_pages) VALUES ("Python", 569);
+INSERT INTO books (title, num_of_pages) VALUES ("PHP", 425);
+INSERT INTO books (title, num_of_pages) VALUES ("Ruby", 150);
+
+UPDATE books SET name = "C#" WHERE title = "C Sharp";
+
+UPDATE authors SET name = "Bill Shakespeare" WHERE name = "Willian Shakespeare";
+
+INSERTfavorites SET author_id = 1 WHERE book_id =1;
+INSERTfavorites SET author_id = 1 WHERE book_id =2;
+
+INSERT favorites (author_id, book_id) VALUES ( 1, 1);
+INSERT favorites (author_id, book_id) VALUES ( 1, 2);
+INSERT favorites (author_id, book_id) VALUES ( 1, 3);
+
+INSERT favorites (author_id, book_id) VALUES ( 2, 1);
+INSERT favorites (author_id, book_id) VALUES ( 2, 2);
+INSERT favorites (author_id, book_id) VALUES ( 2, 3);
+INSERT favorites (author_id, book_id) VALUES ( 2, 4);
+
+INSERT favorites (author_id, book_id) VALUES (3, 1);
+INSERT favorites (author_id, book_id) VALUES (3, 2);
+INSERT favorites (author_id, book_id) VALUES (3, 3);
+INSERT favorites (author_id, book_id) VALUES (3, 4);
+INSERT favorites (author_id, book_id) VALUES (3, 5);
+
+
+SELECT * FROM authors WHERE book_id = 3;
+
+DELETE FROM favories WHERE book_id =3 LIMIT 1;
+
+INSERT INTO favories (author_id, book_id) VALUES (5,2);
+
+SELECT book_id FROM favorites WHERE author_id = 3;
+
+SELECT author_id FROM favorites WHERE book_id = 5;
+
+
+
+
+
+
+
+
+
+
